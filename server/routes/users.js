@@ -7,9 +7,8 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/add').post((req, res) => {
+router.post('/add',(req, res) => {
   const username = req.body.username;
-
   const newUser = new User({username});
 
   newUser.save()
